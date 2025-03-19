@@ -11,19 +11,25 @@ let productsController = require('../controllers/productsController');
 
 
 //Rutas
-router.get('/', productsController.index);
+router.get('/products', productsController.index);
 
-//Listado
-router.get('/', productsController.list);
-router.post('/', productsController.list);
-router.get('/:id', productsController.show);
+//Listado de productos
+router.get('/products', productsController.list);
+
+//Creación de productos
 router.get('/productNew', productsController.create);
-router.post('/create', productsController.store);
+router.post('/products/create', productsController.store);
+
+//Detalle de un producto
+router.get('/products/:id', productsController.show);
+
+//Edición de un producto
 router.get('/productEdit', productsController.edit);
-router.put('/:id', productsController.update);
-router.delete('/delete/:id', productsController.destroy);
+router.post('/products', productsController.list);
+router.put('/products/:id', productsController.update);
 
-
+//Eliminar un producto
+router.delete('/products/:id', productsController.delete);
 
 
 //Exportar módulo
